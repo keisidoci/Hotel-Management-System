@@ -7,22 +7,41 @@ public class Hotel
     static void CustDetails(int i,int rn)
     {
         String name, contact, gender;
+
         String name2 = null, contact2 = null;
         String gender2="";
         System.out.print("\nEnter customer name: ");
         name = sc.next();
         System.out.print("Enter contact number: ");
+        sc.nextLine();
         contact=sc.next();
         System.out.print("Enter gender: ");
         gender = sc.next();
+        while (!gender.equals("Male") && !gender.equals("Female") && !gender.equals("female") && !gender.equals("male")) {
+            System.out.println("Incorrect gender, only use Male or Female");
+            gender = sc.next();
+           
+        }
+        
+       
         if(i<3)
         {
             System.out.print("Enter second customer name: ");
             name2 = sc.next();
             System.out.print("Enter contact number: ");
+            sc.nextLine();
             contact2=sc.next();
             System.out.print("Enter gender: ");
             gender2 = sc.next();
+            while (!gender2.equals("Male") && !gender2.equals("Female") && !gender2.equals("female") && !gender2.equals("male")) {
+                System.out.println("Incorrect gender, only use Male or Female");
+                gender2 = sc.next();
+               
+            }
+            
+           
+
+            
         }
 
         switch (i) {
@@ -63,7 +82,7 @@ public class Hotel
                 }
                 catch(Exception e)
                 {
-                    System.out.println("Invalid Option");
+                    System.out.println("Room is already booked");
                     return;
                 }
                 break;
@@ -354,9 +373,9 @@ public class Hotel
         int i,q;
         char wish;
         try{
-            System.out.println("\n==========\n   Menu:  \n==========\n\n1.Sandwich\tRs.50\n2.Pasta\t\tRs.60\n3.Noodles\tRs.70\n4.Coke\t\tRs.30\n");
             do
             {
+                System.out.println("\n==========\n   Menu:  \n==========\n\n1.Sandwich\t500 Lek\n2.Pasta\t\t600 Lek\n3.Noodles\t700 Lek\n4.Coke\t\t200 Lek\n");
                 i = sc.nextInt();
                 System.out.print("Quantity- ");
                 q=sc.nextInt();
